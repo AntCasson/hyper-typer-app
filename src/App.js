@@ -7,7 +7,7 @@ import TextForTyping from "./components/TextForTyping"
 
 export default function App() {
     
-    const [seconds, setSeconds] = useState(10)
+    const [seconds, setSeconds] = useState(15)
       
     function secChange(e) {
         const {value} = e.target
@@ -36,21 +36,12 @@ export default function App() {
         <main className="wrapper">
             <div className="flex-header">
                 <button className="btn-count min" onClick={() => setSeconds(second => second - 1)}></button>
-                <h1>{seconds === 10 ? "Tien" : seconds} Typer</h1>
+                <h1>{seconds === 15 ? "Hyper" : seconds} Typer</h1>
                 <button className="btn-count plus" onClick={() => setSeconds(second => second + 1)}></button>                
             </div>
-            <p className="subtitle">Hoeveel woorden typ jij in 
-                <input 
-                    type="number"
-                    name="seconds"
-                    min="1"
-                    max="120"
-                    id="sec-selector"
-                    value={seconds}
-                    disabled={isTimeRunning}
-                    onChange={secChange}
-                /> 
-            seconden?</p>
+            <p className="subtitle">Je mag<span className="input"disabled={isTimeRunning}
+                    onChange={secChange}> {seconds} </span>seconden typen
+            </p>
             <TextForTyping text={textToCheck}/>
             <textarea
                 ref={textBoxRef}
@@ -60,14 +51,14 @@ export default function App() {
                 placeholder="Druk op de start knop en gaan met die 🍌"
             />
             <div className="flex">
-                <button 
+                <button className="btn"
                     onClick={startGame}
                     disabled={isTimeRunning}
                 >
                     Start
                 </button>
                 
-                <button className="btn__change-text"
+                <button className="btn"
                     onClick={() => setTextToCheck(getRandomParagraph)}
                     disabled={isTimeRunning}
                 >
