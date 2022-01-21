@@ -68,8 +68,8 @@ export default function App() {
             </div>
             
             <div className="flex">
-                <p>Tijd over: {isTimeRunning ? timeRemaining : seconds}s</p>
-               <p>Aantal woorden: {wordCount}</p>
+                <p>Tijd over: <span className="text-light">{isTimeRunning ? timeRemaining : seconds}</span>s</p>
+               <p>Aantal woorden: <span className="text-light">{wordCount}</span></p>
             </div>
     
         </main>
