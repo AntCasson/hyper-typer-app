@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect, useRef} from "react"
+import React, {useState, useEffect} from "react"
 import useWordGame from "./hooks/useWordGame"
 import TextForTyping from "./components/TextForTyping"
 
@@ -15,8 +15,8 @@ export default function App() {
     }
     useEffect( ()=> {
         setTextToCheck(getRandomParagraph)
-        return () => alert("You have won!")
-    },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     
     const {
         textBoxRef,
