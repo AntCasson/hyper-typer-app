@@ -43,6 +43,7 @@ button {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
+  cursor: pointer;
   margin-inline: 2em;
   border: none;
   border-radius: 0.4em;
@@ -70,18 +71,54 @@ button:focus {
   font-size: 1.2rem;
 }
 
-h1 {
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-  font-size: 1.8rem;
-  text-align: center;
+.flex-header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
 }
 
+h1 {
+  margin: 0;
+  font-size: 7vw;
+}
+
+.flex-header button.btn-count {
+  padding: 1em;
+  margin: 0 2em;
+  flex: 0;
+}
+
+button.btn-count.min {
+  background: url("./../public/images/min.png") no-repeat transparent;
+  background-size: contain;
+  filter: invert(1);
+}
+
+button.btn-count.plus {
+  background: url("../public/images/plus.png") no-repeat transparent;
+  background-size: contain;
+  filter: invert(1);
+}
 p.subtitle {
-  margin-top: 0.3em;
+  margin-top: 0.5em;
   margin-inline: auto;
-  max-width: 50%;
-  line-height: 1.4;
+  max-width: 40%;
+  font-size: 2.5vw;
+}
+
+input {
+  margin: 0 0.2em;
+  font-family: "Press Start 2P", cursive;
+  height: 2vh;
+  text-align: center;
+  border: solid 1px var(--yellow);
+  border-radius: 0.3rem;
+  background-color: transparent;
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .textForTyping {
@@ -125,51 +162,8 @@ textarea:disabled {
   height: 50px;
 }
 
-h1 {
-  margin: 0.4em 0;
-}
-
-.flex-header {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  max-width: 65%;
-}
-
-.flex-header button.btn-count {
-  padding: 1em;
-  margin: 0 2em;
-  flex: 0;
-}
-
-button.btn-count.min {
-  background: url("./../public/images/min.png") no-repeat transparent;
-  background-size: contain;
-  filter: invert(1);
-}
-
-button.btn-count.plus {
-  background: url("../public/images/plus.png") no-repeat transparent;
-  background-size: contain;
-  filter: invert(1);
-}
-
 .flex p {
   margin: 0;
   padding: 0 0.3em;
   font-size: 0.8rem;
-}
-
-input {
-  margin: 0;
-  font-family: "Press Start 2P", cursive;
-  height: 2vh;
-  text-align: center;
-  border: none;
-  border-radius: 0.3rem;
-  background-color: transparent;
-  color: var(--yellow);
-  font-weight: 700;
-  font-size: 1rem;
 }
