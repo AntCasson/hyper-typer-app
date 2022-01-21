@@ -39,7 +39,7 @@ export default function App() {
                 <h1>{seconds === 15 ? "Hyper" : seconds} Typer</h1>
                 <button className="btn-count plus" onClick={() => setSeconds(second => second + 1)}></button>                
             </div>
-            <p className="subtitle">Je mag<span className="input"disabled={isTimeRunning}
+            <p className="subtitle">Je mag<span className="input text-light"disabled={isTimeRunning}
                     onChange={secChange}> {seconds} </span>seconden typen
             </p>
             <TextForTyping text={textToCheck}/>
