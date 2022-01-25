@@ -1,8 +1,8 @@
 :root {
   --bg: #0b1121;
   --primary: #0ea5e9;
-  --light: #f8fafc;
-  --disabled: #d4eaff;
+  --light: #d6d6d6;
+  --disabled: #d4eaff88;
   --accent: #ec38bc;
   --purple: #7303c0;
 }
@@ -65,12 +65,12 @@ button {
   font-weight: 700;
   cursor: pointer;
   border: none;
-  border-radius: 0.4em;
+  border-radius: 0.2em;
   background: var(--accent);
   color: var(--light);
   padding: 0.9em;
   text-transform: uppercase;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 button:disabled {
@@ -171,6 +171,11 @@ textarea {
 textarea:disabled {
   background-color: var(--disabled);
   font-size: 0.9rem;
+}
+
+textarea::placeholder {
+  color: var(--accent);
+  opacity: 0.7;
 }
 
 .flex {
