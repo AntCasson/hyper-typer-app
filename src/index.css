@@ -60,6 +60,7 @@ body {
 
 .text-light {
   color: var(--light);
+  padding: 0 0.3em;
 }
 
 .github {
