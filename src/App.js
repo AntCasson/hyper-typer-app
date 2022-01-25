@@ -34,7 +34,7 @@ export default function App() {
     
     return (
         <main className="wrapper">
-            <a className="github" href="https://github.com/AntCasson"></a>
+            <a className="github" aria-label="Link to Anthony Casson GitHub"href="https://github.com/AntCasson"><span className="sr-only">Link to GitHub page Anthony Casson</span></a>
             <div className="flex-header">
                 <button className="btn-count min" onClick={() => setSeconds(second => second - 1)}></button>
                 <h1>{seconds === 20 ? "Hyper" : `${seconds} sec`} Typer</h1>
