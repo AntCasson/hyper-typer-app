@@ -7,7 +7,7 @@ import TextForTyping from "./components/TextForTyping"
 
 export default function App() {
     
-    const [seconds, setSeconds] = useState(15)
+    const [seconds, setSeconds] = useState(20)
       
     function secChange(e) {
         const {value} = e.target
@@ -36,11 +36,11 @@ export default function App() {
         <main className="wrapper">
             <div className="flex-header">
                 <button className="btn-count min" onClick={() => setSeconds(second => second - 1)}></button>
-                <h1>{seconds === 15 ? "Hyper" : seconds} Typer</h1>
+                <h1>{seconds === 20 ? "Hyper" : `${seconds} sec`} Typer</h1>
                 <button className="btn-count plus" onClick={() => setSeconds(second => second + 1)}></button>                
             </div>
-            <p className="subtitle">Je mag<span className="input text-light"disabled={isTimeRunning}
-                    onChange={secChange}> {seconds} </span>seconden typen
+            <p className="subtitle">Er zijn nog<span className="input text-light"disabled={isTimeRunning}
+                    onChange={secChange}> {isTimeRunning ? timeRemaining : seconds}  </span>seconden over.
             </p>
             <TextForTyping text={textToCheck}/>
             <textarea
@@ -50,7 +50,7 @@ export default function App() {
                 disabled={!isTimeRunning}
                 placeholder="Druk op de start knop en gaan met die 🍌"
             />
-            <div className="flex">
+            <div>
                 <button className="btn"
                     onClick={startGame}
                     disabled={isTimeRunning}
@@ -67,8 +67,7 @@ export default function App() {
                 
             </div>
             
-            <div className="flex">
-                <p>Tijd over: <span className="text-light">{isTimeRunning ? timeRemaining : seconds}</span>s</p>
+            <div className="score-time">
                <p>Aantal woorden: <span className="text-light">{wordCount}</span></p>
             </div>
     

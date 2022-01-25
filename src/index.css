@@ -4,20 +4,12 @@
   --light: #f8fafc;
   --disabled: #d4eaff;
   --accent: #ec38bc;
+  --purple: #7303c0;
 }
 
 html,
 body {
-  background: linear-gradient(
-    -45deg,
-    #7303c0,
-    #ec38bc,
-    var(--primary),
-    #ec38bc,
-    #7303c0
-  );
-  background-size: 200% 400%;
-  animation: gradient 10s ease infinite;
+  background: var(--bg);
   color: var(--primary);
   margin: 0;
   padding: 0;
@@ -60,8 +52,9 @@ body {
 
 .wrapper {
   display: grid;
+  align-content: center;
   margin-inline: auto;
-  max-width: 60em;
+  max-width: 48.75rem;
   height: 100vh;
   background: var(--bg);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -75,7 +68,7 @@ button {
   border-radius: 0.4em;
   background: var(--accent);
   color: var(--light);
-  padding: 0.9em 0.1em;
+  padding: 0.9em;
   text-transform: uppercase;
   transition: all 0.5s ease-out;
 }
@@ -92,23 +85,23 @@ button:focus {
 }
 
 .flex-header {
-  margin: 0 auto;
+  margin-top: 3em;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 80%;
 }
 
 h1 {
   margin: 0;
+  padding: 0;
   font-size: clamp(2rem, 8vw, 6rem);
   background: -webkit-linear-gradient(
     -45deg,
-    #7303c0,
-    #ec38bc,
+    var(--purple),
+    var(--accent),
     var(--primary),
-    #ec38bc,
-    #7303c0
+    var(--accent),
+    var(--purple)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -145,15 +138,16 @@ p.subtitle {
   margin-inline: auto;
   max-width: 50%;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.5rem);
 }
 
 .textForTyping {
+  margin-top: 2em;
+  margin-bottom: 1.5em;
   margin-inline: auto;
-  padding: 0.8em;
   width: 92%;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, calc(2vw + 0.5rem), 1.6rem);
   font-weight: 500;
   letter-spacing: 1px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -166,7 +160,7 @@ textarea {
   padding: 0.8em;
   background-color: var(--primary);
   font-family: "Press Start 2P", cursive;
-  border: 3px solid var(--primary);
+  border: none;
   border-radius: 0.4em;
   outline: none;
   width: 90%;
@@ -180,7 +174,6 @@ textarea:disabled {
 }
 
 .flex {
-  margin-top: 1.6rem;
   margin-inline: auto;
   display: flex;
   gap: 1em;
@@ -193,19 +186,26 @@ textarea:disabled {
   font-size: 1.2rem;
 }
 
-.flex p {
-  margin: 0;
-  padding: 0 0.3em;
+div.score-time p {
+  display: inline-block;
+  margin-inline: 0.2em;
+  font-size: clamp(0.8rem, calc(1vw + 0.2rem), 1.2rem);
+  font-weight: 500;
 }
 
-div.flex button.btn {
-  justify-self: space-around;
+button.btn {
+  padding: 0.9em 1em;
+  margin-top: 1em;
+  margin-inline: 0.8em;
+  display: inline-block;
   background-color: var(--accent);
   color: var(--light);
-  padding: 0.9em 1em;
   flex: 0 1 9.5rem;
+  flex-wrap: no-wrap;
 }
-div.flex button.btn:hover,
-div.flex button.btn:focus {
+
+button.btn:hover,
+button.btn:focus {
+  border-radius: 100vh;
   background-color: var(--primary);
 }
